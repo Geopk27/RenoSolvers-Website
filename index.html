@@ -296,7 +296,14 @@
             background-color: #0056b3;
         }
 
-        /*        .area-card {
+        /* --- Shop by Area Section --- */
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 20px;
+        }
+        .area-card {
             position: relative;
             border-radius: 8px;
             overflow: hidden;
@@ -305,7 +312,15 @@
         .area-card img {
             width: 100%;
             height: 100%;
-0;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .area-card:hover img {
+            transform: scale(1.1);
+        }
+        .area-card .overlay {
+            position: absolute;
+            top: 0;
             left: 0;
             width: 100%;
             height: 100%;
@@ -412,6 +427,7 @@
             border-radius: 5px;
             border: none;
             margin-bottom: 10px;
+            box-sizing: border-box;
         }
         .footer-subscribe button {
             width: 100%;
@@ -427,7 +443,17 @@
             text-align: center;
             padding-top: 20px;
             border-top: 1px solid #34495e;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
 
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="logo">RenoSolvers</div>
         <div class="nav-links">
             <a href="#">Shop</a>
             <a href="#">Our Brands</a>
@@ -445,7 +471,11 @@
     <section class="hero-section">
         <div class="price-tag" id="tag-tv"><div class="dot"></div><div class="text">TV Console: From RM 3,999</div></div>
         <div class="price-tag" id="tag-dining"><div class="dot"></div><div class="text">Dining Cabinet: From RM 2,899</div></div>
-        <div class="price-tag" id="tag-kitchen"><div class="dot"></div><div class="text">Full Kitchen Set: From RM 8,95c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg></div>
+        <div class="price-tag" id="tag-kitchen"><div class="dot"></div><div class="text">Full Kitchen Set: From RM 8,999</div></div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg></div>
 
     <!-- 3 Pillars Section -->
     <section class="content-section" id="our-pillars">
@@ -454,7 +484,23 @@
         <div class="pillars-container">
             <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg></div><h3>Local Manufacturing</h3><p>Every cabinet is crafted in our local JB workshop, ensuring the highest quality and faster delivery times.</p></div>
             <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div><h3>Quality Local Materials</h3><p>We partner with local suppliers to select eco-friendly boards and reliable hardware that are durable and safe.</p></div>
-            <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9        <p class="section-subtitle">Start with our signature designs. Each one is a template for your creativity, fully customizable in size, color, and finish.</p>
+            <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg></div><h3>Professional Local Designers</h3><p>Our design team understands local layouts and lifestyles, providing solutions that perfectly fit your needs.</p></div>
+        </div>
+    </section>
+    
+    <!-- Featured Space: Wardrobe -->
+    <section class="featured-space-section">
+        <div class="featured-space-content">
+            <h2>Design Your Dream Wardrobe</h2>
+            <p>Turn storage into an art form, where every item has its place. We can customize a unique walk-in wardrobe solution for your space and needs.</p>
+            <a href="#" class="cta-button">Explore Wardrobe Designs</a>
+        </div>
+    </section>
+
+    <!-- Product Collections Section -->
+    <section class="content-section" id="products">
+        <h2>Our Product Collections</h2>
+        <p class="section-subtitle">Start with our signature designs. Each one is a template for your creativity, fully customizable in size, color, and finish.</p>
         <div class="product-grid">
             <div class="product-card"><div class="product-image-container"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=800&auto=format&fit=crop" alt="Modern TV Console"></div><div class="product-info"><h3>"The Minimalist" TV Console</h3><p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p><div class="product-price">From RM 3,999</div><a href="#" class="product-button">View Details</a></div></div>
             <div class="product-card"><div class="product-image-container"><img src="https://images.unsplash.com/photo-1618221649164-939c725c1952?q=80&w=800&auto=format&fit=crop" alt="Custom Wardrobe"></div><div class="product-info"><h3>"The Organizer" Wardrobe</h3><p>Maximize your storage with smart compartments and a clean, elegant finish.</p><div class="product-price">From RM 5,499</div><a href="#" class="product-button">View Details</a></div></div>
@@ -463,9 +509,14 @@
     </section>
 
     <!-- Shop by Area Section -->
-    <section class="content">
+    <section class="content-section grey-bg" id="shop-by-area">
+        <h2>Designed for Every Space</h2>
+        <p class="section-subtitle">Whether you're revamping a single room or your entire home, we have tailored solutions for every area.</p>
+        <div class="area-grid">
             <div class="area-card"><img src="https://images.unsplash.com/photo-1588854337236-6889d631f379?q=80&w=800&auto=format&fit=crop" alt="Living Room"><div class="overlay"><h3>Living Room</h3></div></div>
-            <div class="area-card"><img src="https://images.unsplash.com/photo-1633231043692-54c3644https://images.unsplash.com/photo-1604323990536-e54920ae84c3?q=80&w=800&auto=format&fit=crop" alt="Dining Room"><div class="overlay"><h3>Dining Room</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1633231043692-54c364454703?q=80&w=800&auto=format&fit=crop" alt="Kitchen"><div class="overlay"><h3>Kitchen</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?q=80&w=800&auto=format&fit=crop" alt="Bedroom"><div class="overlay"><h3>Bedroom</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1604323990536-e54920ae84c3?q=80&w=800&auto=format&fit=crop" alt="Dining Room"><div class="overlay"><h3>Dining Room</h3></div></div>
             <div class="area-card"><img src="https://images.unsplash.com/photo-1556912173-35feb39c5673?q=80&w=800&auto=format&fit=crop" alt="Bathroom"><div class="overlay"><h3>Bathroom</h3></div></div>
             <div class="area-card"><img src="https://images.unsplash.com/photo-1598605272254-846023c65913?q=80&w=800&auto=format&fit=crop" alt="Foyer"><div class="overlay"><h3>Foyer & Entryway</h3></div></div>
         </div>
@@ -487,4 +538,36 @@
         <h2>What Our Clients Say</h2>
         <p class="section-subtitle">Our greatest pride is the satisfaction of our homeowners. Here's what they have to say about their experience with RenoSolvers.</p>
         <div class="testimonial-card">
-            <p>"The entire process was seamless and transparent. The RenoSolvers team understood our vision perfectly and delivered a kitchen that exceeded our expectations. The quality of
+            <p>"The entire process was seamless and transparent. The RenoSolvers team understood our vision perfectly and delivered a kitchen that exceeded our expectations. The quality of the workmanship is outstanding."</p>
+            <div class="testimonial-author">Mr. & Mrs. Tan, <span>Eco Botanic</span></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>RenoSolvers</h4>
+                <p>Simplifying renovations with transparent pricing and quality local craftsmanship. Your dream home, solved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#">Our Process</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">WhatsApp Us</a></li>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-subscribe">
+                <h4>Stay Updated</h4>
+                <p>Join our mailing list for new design ideas, promotions,
