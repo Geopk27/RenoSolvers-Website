@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenoSolvers - Your Home, Your Design</title>
+    <style>
+        /* --- 基本样式重置与字体 --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* --- 顶部导航栏 --- */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 90%;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .nav-links a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #007bff;
+        }
+        .nav-icons svg {
+            width: 24px;
+            height: 24px;
+            margin-left: 25px;
+            cursor: pointer;
+            fill: #555;
+            transition: fill 0.3s ease;
+        }
+        .nav-icons svg:hover {
+            fill: #007bff;
+        }
+
+        /* --- 主视觉区域 --- */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url('https://storage.googleapis.com/generative-ai-downloads/images/RenoSolvers_Website_Mockup_Final_zh.png' );
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* --- 价格标签 --- */
+        .price-tag {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        .price-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .price-tag .dot {
+            width: 12px;
+            height: 12px;
+            background-color: #007bff;
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-right: 10px;
+        }
+        .price-tag .text {
+            font-weight: 600;
+            color: #333;
+        }
+        #tag-tv { top: 65%; left: 28%; }
+        #tag-dining { top: 58%; left: 52%; }
+        #tag-kitchen { top: 50%; left: 75%; }
+
+        /* --- Chatbot --- */
+        .chatbot {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #007bff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .chatbot:hover {
+            transform: scale(1.1);
+        }
+        .chatbot svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+        }
+        
+        /* --- 通用内容区域样式 --- */
+        .content-section {
+            padding: 80px 10%;
+            text-align: center;
+        }
+        .content-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #2c3e50;
+        }
+        
+        /* --- 三大买点区域样式 --- */
+        .pillars-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .pillar {
+            flex-basis: 30%;
+            text-align: center;
+        }
+        .pillar-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background-color: #eaf2ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pillar-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #007bff;
+        }
+        .pillar h3 {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .pillar p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- 特色空间区域样式 --- */
+        .featured-space-section {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop' );
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* 创建视差滚动效果 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        .featured-space-content {
+            max-width: 600px;
+            padding: 20px;
+        }
+        .featured-space-content h2 {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .featured-space-content p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: white;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* --- 占位内容区域 --- */
+        .placeholder-box {
+            border: 2px dashed #ccc;
+            padding: 50px;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航栏 -->
+    <nav class="top-nav">
+        <div class="logo">RenoSolvers</div>
+        <div class="nav-links">
+            <a href="#">Shop</a>
+            <a href="#">Our Brands</a>
+            <a href="#">Product</a>
+            <a href="#">Review/Portfolio</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="nav-icons">
+            <!-- Email Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <!-- Cart Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"/></svg>
+        </div>
+    </nav>
+
+    <!-- 主视觉区域 -->
+    <section class="hero-section">
+        <!-- 价格标签 -->
+        <div class="price-tag" id="tag-tv">
+            <div class="dot"></div>
+            <div class="text">TV Console: From RM 3,999</div>
+        </div>
+        <div class="price-tag" id="tag-dining">">Full Kitchen Set: From RM 8,999</div>
+        </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.    </div>
+
+    <!-- 三大买点区域 -->
+    <section class="content-section" id="our-pillars">
+        <h2>我们的三大买点 (Our 3 Pillars )</h2>
+        <div class="pillars-container">
+            <!-- 买点1: 本地制造 -->
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
+                </div>
+                <h3>本地制造</h3>
+                <p>我们的每一件w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 194V12H5V6.3l7-3.11v8.8z"/></svg>
+                </div>
+                <h3>严选本地材料</h3>
+                <p>我们与本地供应商合作 ，为您严选符合标准的环保板材与五金，耐用且安心。</p>
+            </div>
+            <!-- 买点3: 专业设计师 -->
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 6 9-4.91V17h2V9L12 3z"/></svg>
+                </div>
+                <h3>专业本地设计师</h3>
+                <p>我们的设计师团队深谙本地户型与生活习惯 ，为您提供最贴合需求的设计方案。</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- 特色空间：衣帽间 -->
+    <section class="featured-space-section">
+        <div class="featured-space-content">
+            <h2>打造您的专属衣帽间</h2>
+            <p>让收纳成为一种艺术，每一件衣物都有它的专属位置。我们可以根据您的空间和需求，定制独一无二的衣帽间解决方案。</p>
+            <a href="#" class="cta-button">探索衣帽间设计</a>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2>我们的橱柜系列 (Our Product Collections)</h2>
+        <div class="placeholder-box">
+            <p>这里将放置产品网格，展示不同的橱柜产品和价格。</p>
+        </div>
+    </section>
+
+</body>
+</html>
