@@ -10,8 +10,9 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #ffffff;
             color: #333;
+            scroll-behavior: smooth;
         }
 
         /* --- Top Navigation --- */
@@ -61,7 +62,7 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            background-image: url('https://storage.googleapis.com/generative-ai-downloads/images/RenoSolvers_Website_Mockup_Final_zh.png' );
+            background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2600&auto=format&fit=crop' );
             background-size: cover;
             background-position: center;
             display: flex;
@@ -98,9 +99,9 @@
             font-weight: 600;
             color: #333;
         }
-        #tag-tv { top: 65%; left: 28%; }
-        #tag-dining { top: 58%; left: 52%; }
-        #tag-kitchen { top: 50%; left: 75%; }
+        #tag-tv { top: 75%; left: 25%; }
+        #tag-dining { top: 65%; left: 50%; }
+        #tag-kitchen { top: 55%; left: 75%; }
 
         /* --- Chatbot --- */
         .chatbot {
@@ -129,13 +130,23 @@
         
         /* --- General Content Section Styles --- */
         .content-section {
-            padding: 80px 10%;
+            padding: 100px 10%;
             text-align: center;
         }
+        .content-section.grey-bg {
+            background-color: #f8f9fa;
+        }
         .content-section h2 {
-            font-size: 2.5em;
-            margin-bottom: 60px;
+            font-size: 2.8em;
+            margin-bottom: 15px;
             color: #2c3e50;
+        }
+        .section-subtitle {
+            font-size: 1.1em;
+            color: #6c757d;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            line-height: 1.6;
         }
         
         /* --- 3 Pillars Section --- */
@@ -180,7 +191,7 @@
             position: relative;
             width: 100%;
             height: 60vh;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop' );
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2600&auto=format&fit=crop' );
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -223,7 +234,7 @@
         /* --- Product Collections Section --- */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             text-align: left;
         }
@@ -233,8 +244,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             overflow: hidden;
             transition: all 0.3s ease;
-            display: flex; /* ADDED THIS LINE TO FIX FLEXBOX CONFLICT */
-            flex-direction: column; /* ADDED THIS LINE */
+            display: flex;
+            flex-direction: column;
         }
         .product-card:hover {
             transform: translateY(-5px);
@@ -247,9 +258,9 @@
         }
         .product-info {
             padding: 20px;
-            display: flex; /* ADDED THIS LINE */
-            flex-direction: column; /* ADDED THIS LINE */
-            flex-grow: 1; /* ADDED THIS LINE */
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
         .product-info h3 {
             font-size: 1.4em;
@@ -261,7 +272,7 @@
             font-size: 0.95em;
             line-height: 1.5;
             color: #555;
-            flex-grow: 1; /* ADDED THIS LINE - This pushes the price and button down */
+            flex-grow: 1;
         }
         .product-price {
             font-size: 1.3em;
@@ -279,138 +290,201 @@
             border-radius: 5px;
             font-weight: 500;
             transition: background-color 0.3s ease;
-            margin-top: auto; /* ADDED THIS LINE */
+            margin-top: auto;
         }
         .product-button:hover {
             background-color: #0056b3;
         }
 
-    </style>
-</head>
-<body>
+        /*        .area-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .area-card img {
+            width: 100%;
+            height: 100%;
+0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .area-card h3 {
+            color: white;
+            font-size: 1.8em;
+            margin: 0;
+        }
 
-    <!-- Top Navigation -->
-    <nav class="top-nav">
-        <div class="logo">RenoSolvers</div>
+        /* --- Mood Board Section --- */
+        .moodboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .moodboard-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: left;
+        }
+        .moodboard-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .moodboard-info {
+            padding: 20px;
+        }
+        .moodboard-info h3 {
+            margin-top: 0;
+            font-size: 1.4em;
+        }
+        .moodboard-info p {
+            color: #6c757d;
+            font-size: 0.95em;
+        }
+
+        /* --- Testimonials Section --- */
+        .testimonial-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+        }
+        .testimonial-card p {
+            font-size: 1.2em;
+            line-height: 1.7;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .testimonial-author {
+            font-weight: 700;
+            color: #007bff;
+        }
+        .testimonial-author span {
+            font-weight: 400;
+            color: #6c757d;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 10%;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .footer-col p, .footer-col a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+            font-size: 0.95em;
+        }
+        .footer-col a:hover {
+            color: white;
+        }
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-subscribe input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+        }
+        .footer-subscribe button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+
         <div class="nav-links">
             <a href="#">Shop</a>
             <a href="#">Our Brands</a>
-            <a href="#">Product</a>
-            <a href="#">Review/Portfolio</a>
-            <a href="#">Contact Us</a>
+            <a href="#products">Product</a>
+            <a href="#reviews">Review/Portfolio</a>
+            <a href="#contact">Contact Us</a>
         </div>
         <div class="nav-icons">
-            <!-- Email Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-            <!-- Cart Icon -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"/></svg>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero-section">
-        <!-- Price Tags -->
-        <div class="price-tag" id="tag-tv">
-            <div class="dot"></div>
-            <div class="text">TV Console: From RM 3,999</div>
-        </div>
-        <div class="price-tag" id="tag-dining">
-            <div class="dot"></div>
-            <div class="text">Dining Cabinet: From RM 2,899</div>
-        </div>
-        <div class="price-tag" id="tag-kitchen">
-            <div class="dot"></div>
-            <div class="text">Full Kitchen Set: From RM 8,999</div>
-        </div>
-    </section>
-
-    <!-- Chatbot -->
-    <div class="chatbot">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg>
-    </div>
+        <div class="price-tag" id="tag-tv"><div class="dot"></div><div class="text">TV Console: From RM 3,999</div></div>
+        <div class="price-tag" id="tag-dining"><div class="dot"></div><div class="text">Dining Cabinet: From RM 2,899</div></div>
+        <div class="price-tag" id="tag-kitchen"><div class="dot"></div><div class="text">Full Kitchen Set: From RM 8,95c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg></div>
 
     <!-- 3 Pillars Section -->
     <section class="content-section" id="our-pillars">
         <h2>Our 3 Pillars</h2>
+        <p class="section-subtitle">We built our business on a foundation of trust, quality, and local expertise. Here's what makes us different.</p>
         <div class="pillars-container">
-            <!-- Pillar 1: Local Manufacturing -->
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
-                </div>
-                <h3>Local Manufacturing</h3>
-                <p>Every cabinet is crafted in our local JB workshop, ensuring the highest quality and faster delivery times.</p>
-            </div>
-            <!-- Pillar 2: Quality Materials -->
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-                </div>
-                <h3>Quality Local Materials</h3>
-                <p>We partner with local suppliers to select eco-friendly boards and reliable hardware that are durable and safe.</p>
-            </div>
-            <!-- Pillar 3: Professional Designers -->
-            <div class="pillar">
-                <div class="pillar-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
-                </div>
-                <h3>Professional Local Designers</h3>
-                <p>Our design team understands local layouts and lifestyles, providing solutions that perfectly fit your needs.</p>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Featured Space: Wardrobe -->
-    <section class="featured-space-section">
-        <div class="featured-space-content">
-            <h2>Design Your Dream Wardrobe</h2>
-            <p>Turn storage into an art form, where every item has its place. We can customize a unique walk-in wardrobe solution for your space and needs.</p>
-            <a href="#" class="cta-button">Explore Wardrobe Designs</a>
-        </div>
-    </section>
-
-    <!-- Product Collections Section -->
-    <section class="content-section" id="products">
-        <h2>Our Product Collections</h2>
+            <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg></div><h3>Local Manufacturing</h3><p>Every cabinet is crafted in our local JB workshop, ensuring the highest quality and faster delivery times.</p></div>
+            <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg></div><h3>Quality Local Materials</h3><p>We partner with local suppliers to select eco-friendly boards and reliable hardware that are durable and safe.</p></div>
+            <div class="pillar"><div class="pillar-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9        <p class="section-subtitle">Start with our signature designs. Each one is a template for your creativity, fully customizable in size, color, and finish.</p>
         <div class="product-grid">
-            <!-- Product 1: TV Console -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=2070&auto=format&fit=crop" alt="Modern TV Console">
-                </div>
-                <div class="product-info">
-                    <h3>"The Minimalist" TV Console</h3>
-                    <p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p>
-                    <div class="product-price">From RM 3,999</div>
-                    <a href="#" class="product-button">View Details</a>
-                </div>
-            </div>
-            <!-- Product 2: Wardrobe -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1618221649164-939c725c1952?q=80&w=1964&auto=format&fit=crop" alt="Custom Wardrobe">
-                </div>
-                <div class="product-info">
-                    <h3>"The Organizer" Wardrobe</h3>
-                    <p>Maximize your storage with smart compartments and a clean, elegant finish.</p>
-                    <div class="product-price">From RM 5,499</div>
-                    <a href="#" class="product-button">View Details</a>
-                </div>
-            </div>
-            <!-- Product 3: Kitchen Set -->
-            <div class="product-card">
-                <div class="product-image-container">
-                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop" alt="Full Kitchen Set">
-                </div>
-                <div class="product-info">
-                    <h3>"The Chef" Kitchen Set</h3>
-                    <p>A complete kitchen solution with durable countertops and smart storage.</p>
-                    <div class="product-price">From RM 8,999</div>
-                    <a href="#" class="product-button">View Details</a>
-                </div>
-            </div>
+            <div class="product-card"><div class="product-image-container"><img src="https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=800&auto=format&fit=crop" alt="Modern TV Console"></div><div class="product-info"><h3>"The Minimalist" TV Console</h3><p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p><div class="product-price">From RM 3,999</div><a href="#" class="product-button">View Details</a></div></div>
+            <div class="product-card"><div class="product-image-container"><img src="https://images.unsplash.com/photo-1618221649164-939c725c1952?q=80&w=800&auto=format&fit=crop" alt="Custom Wardrobe"></div><div class="product-info"><h3>"The Organizer" Wardrobe</h3><p>Maximize your storage with smart compartments and a clean, elegant finish.</p><div class="product-price">From RM 5,499</div><a href="#" class="product-button">View Details</a></div></div>
+            <div class="product-card"><div class="product-image-container"><img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=800&auto=format&fit=crop" alt="Full Kitchen Set"></div><div class="product-info"><h3>"The Chef" Kitchen Set</h3><p>A complete kitchen solution with durable countertops and smart storage.</p><div class="product-price">From RM 8,999</div><a href="#" class="product-button">View Details</a></div></div>
         </div>
     </section>
 
-</body>
-</html>
+    <!-- Shop by Area Section -->
+    <section class="content">
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1588854337236-6889d631f379?q=80&w=800&auto=format&fit=crop" alt="Living Room"><div class="overlay"><h3>Living Room</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1633231043692-54c3644https://images.unsplash.com/photo-1604323990536-e54920ae84c3?q=80&w=800&auto=format&fit=crop" alt="Dining Room"><div class="overlay"><h3>Dining Room</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1556912173-35feb39c5673?q=80&w=800&auto=format&fit=crop" alt="Bathroom"><div class="overlay"><h3>Bathroom</h3></div></div>
+            <div class="area-card"><img src="https://images.unsplash.com/photo-1598605272254-846023c65913?q=80&w=800&auto=format&fit=crop" alt="Foyer"><div class="overlay"><h3>Foyer & Entryway</h3></div></div>
+        </div>
+    </section>
+
+    <!-- Mood Board Section -->
+    <section class="content-section" id="moodboards">
+        <h2>Find Your Inspiration</h2>
+        <p class="section-subtitle">Not sure where to start? Explore our curated design concepts to discover the style that speaks to you.</p>
+        <div class="moodboard-grid">
+            <div class="moodboard-card"><img src="https://images.unsplash.com/photo-1617103996426-b7589cf17f33?q=80&w=800&auto=format&fit=crop" alt="Modern Minimalist"><div class="moodboard-info"><h3>Modern Minimalist</h3><p>Clean lines, neutral colors, and a focus on simplicity and function.</p></div></div>
+            <div class="moodboard-card"><img src="https://images.unsplash.com/photo-1662492790957-07892204b86d?q=80&w=800&auto=format&fit=crop" alt="Wabi-Sabi"><div class="moodboard-info"><h3>Wabi-Sabi</h3><p>Embracing imperfection with natural materials, earthy tones, and organic textures.</p></div></div>
+            <div class="moodboard-card"><img src="https://images.unsplash.com/photo-1629078892134-605761875b58?q=80&w=800&auto=format&fit=crop" alt="Creamy Loft"><div class="moodboard-info"><h3>Creamy Loft</h3><p>Soft, warm, and inviting. A cozy blend of beige, off-white, and gentle curves.</p></div></div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="content-section grey-bg" id="reviews">
+        <h2>What Our Clients Say</h2>
+        <p class="section-subtitle">Our greatest pride is the satisfaction of our homeowners. Here's what they have to say about their experience with RenoSolvers.</p>
+        <div class="testimonial-card">
+            <p>"The entire process was seamless and transparent. The RenoSolvers team understood our vision perfectly and delivered a kitchen that exceeded our expectations. The quality of
