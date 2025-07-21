@@ -2,13 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenoSolvers - Your Home, Your Design</title>
+    <style>
+        /* --- Basic Styles & Font --- */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* --- Top Navigation --- */
+        .top-nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
             background-color: rgba(255, 255, 255, 0.9);
-            000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e0e0e0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 90%;
+            z-index: 1000;
         }
         .logo {
             font-size: 1.8em;
@@ -121,7 +140,16 @@
         
         /* --- 3 Pillars Section --- */
         .pillars-container {
-            display:-icon {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .pillar {
+            flex-basis: 30%;
+            text-align: center;
+        }
+        .pillar-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 20px;
@@ -137,7 +165,28 @@
             fill: #007bff;
         }
         .pillar h3 {
-            (0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c2;
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .pillar p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        /* --- Featured Space Section --- */
+        .featured-space-section {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1616047006789-b7af5afb8c20?q=80&w=2080&auto=format&fit=crop' );
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
             color: white;
         }
@@ -146,16 +195,94 @@
             padding: 20px;
         }
         .featured-space-content h2 {
-             #f0f0f0;
-            transform: translateY(-2px );
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .featured-space-content p {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: white;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
         }
 
-        /* --- Placeholder Box --- */
-        .placeholder-box {
-            border: 2px dashed #ccc;
-            padding: 50px;
-            border-radius: 10px;
-            background-color: #fafafa;
+        /* --- Product Collections Section --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Creates a 3-column grid */
+            gap: 30px;
+            text-align: left;
+        }
+        .product-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex; /* ADDED THIS LINE TO FIX FLEXBOX CONFLICT */
+            flex-direction: column; /* ADDED THIS LINE */
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .product-image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 20px;
+            display: flex; /* ADDED THIS LINE */
+            flex-direction: column; /* ADDED THIS LINE */
+            flex-grow: 1; /* ADDED THIS LINE */
+        }
+        .product-info h3 {
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .product-info p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #555;
+            flex-grow: 1; /* ADDED THIS LINE - This pushes the price and button down */
+        }
+        .product-price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .product-button {
+            display: block;
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: auto; /* ADDED THIS LINE */
+        }
+        .product-button:hover {
+            background-color: #0056b3;
         }
 
     </style>
@@ -166,13 +293,40 @@
     <nav class="top-nav">
         <div class="logo">RenoSolvers</div>
         <div class="nav-links">
-2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-58-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-            <div class="text">Full Kitchen Set: From RM 8,999</div>
+            <a href="#">Shop</a>
+            <a href="#">Our Brands</a>
+            <a href="#">Product</a>
+            <a href="#">Review/Portfolio</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="nav-icons">
+            <!-- Email Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <!-- Cart Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2S15.9 22 17 22s2-.9 2-2-.9-2-2-2z"/></svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Price Tags -->
+        <div class="price-tag" id="tag-tv">
+            <div class="dot"></div>
+            <div class="text">TV Console: From RM 3,999</div>
+        </div>
+        <div class="price-tag" id="tag-dining">
+            <div class="dot"></div>
+            <div class="text">Dining Cabinet: From RM 2,899</div>
+        </div>
+        <div class="price-tag" id="tag-kitchen">
+            <div class="dot"></div>
+            <div class="text">Full Kitchen Set: From RM 8,999</div>
         </div>
     </section>
 
     <!-- Chatbot -->
     <div class="chatbot">
-        <svg xmlns="http://www.w3.org/2000/svg".63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 11.5c0-3.87-3.13-7-7-7s-7 3.13-7 7c0 1.9.78 3.63 2.05 4.88L7 21.5l3.5-2c.83.32 1.73.5 2.65.5 3.87 0 7-3.13 7-7z"/></svg>
     </div>
 
     <!-- 3 Pillars Section -->
@@ -180,7 +334,9 @@
         <h2>Our 3 Pillars</h2>
         <div class="pillars-container">
             <!-- Pillar 1: Local Manufacturing -->
-            <divl10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5-10-5-10 5z"/></svg>
                 </div>
                 <h3>Local Manufacturing</h3>
                 <p>Every cabinet is crafted in our local JB workshop, ensuring the highest quality and faster delivery times.</p>
@@ -193,7 +349,10 @@
                 <h3>Quality Local Materials</h3>
                 <p>We partner with local suppliers to select eco-friendly boards and reliable hardware that are durable and safe.</p>
             </div>
-            <!-- Pillar 3: 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+            <!-- Pillar 3: Professional Designers -->
+            <div class="pillar">
+                <div class="pillar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
                 </div>
                 <h3>Professional Local Designers</h3>
                 <p>Our design team understands local layouts and lifestyles, providing solutions that perfectly fit your needs.</p>
@@ -210,10 +369,46 @@
         </div>
     </section>
 
-    <section class="content-section">
+    <!-- Product Collections Section -->
+    <section class="content-section" id="products">
         <h2>Our Product Collections</h2>
-        <div class="placeholder-box">
-            <p>This is where the product grid will be placed, showcasing different cabinets with their prices.</p>
+        <div class="product-grid">
+            <!-- Product 1: TV Console -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f82d72?q=80&w=2070&auto=format&fit=crop" alt="Modern TV Console">
+                </div>
+                <div class="product-info">
+                    <h3>"The Minimalist" TV Console</h3>
+                    <p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p>
+                    <div class="product-price">From RM 3,999</div>
+                    <a href="#" class="product-button">View Details</a>
+                </div>
+            </div>
+            <!-- Product 2: Wardrobe -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1618221649164-939c725c1952?q=80&w=1964&auto=format&fit=crop" alt="Custom Wardrobe">
+                </div>
+                <div class="product-info">
+                    <h3>"The Organizer" Wardrobe</h3>
+                    <p>Maximize your storage with smart compartments and a clean, elegant finish.</p>
+                    <div class="product-price">From RM 5,499</div>
+                    <a href="#" class="product-button">View Details</a>
+                </div>
+            </div>
+            <!-- Product 3: Kitchen Set -->
+            <div class="product-card">
+                <div class="product-image-container">
+                    <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2070&auto=format&fit=crop" alt="Full Kitchen Set">
+                </div>
+                <div class="product-info">
+                    <h3>"The Chef" Kitchen Set</h3>
+                    <p>A complete kitchen solution with durable countertops and smart storage.</p>
+                    <div class="product-price">From RM 8,999</div>
+                    <a href="#" class="product-button">View Details</a>
+                </div>
+            </div>
         </div>
     </section>
 
