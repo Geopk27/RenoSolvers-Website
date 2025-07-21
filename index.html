@@ -255,6 +255,7 @@
             width: 100%;
             height: 250px;
             object-fit: cover;
+            background-color: #e0e0e0; /* Grey background for broken images */
         }
         .product-info {
             padding: 20px;
@@ -314,6 +315,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.4s ease;
+            background-color: #e0e0e0; /* Grey background for broken images */
         }
         .area-card:hover img {
             transform: scale(1.1);
@@ -365,7 +367,7 @@
             font-size: 0.95em;
         }
 
-        /* --- Testimonials Section --- */
+        /* --- Upgraded Testimonials Section with Images --- */
         .testimonial-card {
             max-width: 700px;
             margin: 0 auto;
@@ -373,6 +375,22 @@
             padding: 40px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            position: relative; /* Needed for image positioning */
+            padding-top: 60px; /* Make space for the image above */
+            text-align: center;
+        }
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* This makes the image circular */
+            object-fit: cover;
+            border: 4px solid #f8f9fa; /* Match the grey background */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            /* Position the image to be half-on, half-off the card */
+            position: absolute;
+            top: -40px; /* Pull it up by half its height */
+            left: 50%;
+            transform: translateX(-50%);
         }
         .testimonial-card p {
             font-size: 1.2em;
@@ -498,30 +516,29 @@
     </section>
 
     <!-- Product Collections Section -->
-    <!-- Product Collections Section -->
-<section class="content-section" id="products">
-    <h2>Our Product Collections</h2>
-    <p class="section-subtitle">Start with our signature designs. Each one is a template for your creativity, fully customizable in size, color, and finish.</p>
-    <div class="product-grid">
-        <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/Z8sL5a0.jpeg" alt="Modern TV Console"></div><div class="product-info"><h3>"The Minimalist" TV Console</h3><p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p><div class="product-price">From RM 2,999</div><a href="#" class="product-button">View Details</a></div></div>
-        <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/8hUTe3R.jpeg" alt="Custom Wardrobe"></div><div class="product-info"><h3>"The Organizer" Wardrobe</h3><p>Maximize your storage with smart compartments and a clean, elegant finish.</p><div class="product-price">From RM 3,499</div><a href="#" class="product-button">View Details</a></div></div>
-        <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/wVqQ9vX.jpeg" alt="Full Kitchen Set"></div><div class="product-info"><h3>"The Chef" Kitchen Set</h3><p>A complete kitchen solution with durable countertops and smart storage.</p><div class="product-price">From RM 9,999</div><a href="#" class="product-button">View Details</a></div></div>
-    </div>
-</section>
+    <section class="content-section" id="products">
+        <h2>Our Product Collections</h2>
+        <p class="section-subtitle">Start with our signature designs. Each one is a template for your creativity, fully customizable in size, color, and finish.</p>
+        <div class="product-grid">
+            <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/Z8sL5a0.jpeg" alt="Modern TV Console"></div><div class="product-info"><h3>"The Minimalist" TV Console</h3><p>A sleek, floating design perfect for modern living rooms. Fully customizable.</p><div class="product-price">From RM 2,999</div><a href="#" class="product-button">View Details</a></div></div>
+            <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/8hUTe3R.jpeg" alt="Custom Wardrobe"></div><div class="product-info"><h3>"The Organizer" Wardrobe</h3><p>Maximize your storage with smart compartments and a clean, elegant finish.</p><div class="product-price">From RM 3,499</div><a href="#" class="product-button">View Details</a></div></div>
+            <div class="product-card"><div class="product-image-container"><img src="https://i.imgur.com/wVqQ9vX.jpeg" alt="Full Kitchen Set"></div><div class="product-info"><h3>"The Chef" Kitchen Set</h3><p>A complete kitchen solution with durable countertops and smart storage.</p><div class="product-price">From RM 9,999</div><a href="#" class="product-button">View Details</a></div></div>
+        </div>
+    </section>
 
-<!-- Shop by Area Section -->
-<section class="content-section grey-bg" id="shop-by-area">
-    <h2>Designed for Every Space</h2>
-    <p class="section-subtitle">Whether you're revamping a single room or your entire home, we have tailored solutions for every area.</p>
-    <div class="area-grid">
-        <div class="area-card"><img src="https://i.imgur.com/Y4SA372.jpeg" alt="Living Room"><div class="overlay"><h3>Living Room</h3></div></div>
-        <div class="area-card"><img src="https://i.imgur.com/OpMA7ff.jpeg" alt="Kitchen"><div class="overlay"><h3>Kitchen</h3></div></div>
-        <div class="area-card"><img src="https://i.imgur.com/beEsah7.jpeg" alt="Bedroom"><div class="overlay"><h3>Bedroom</h3></div></div>
-        <div class="area-card"><img src="https://i.imgur.com/dpVqx4B.jpeg" alt="Dining Room"><div class="overlay"><h3>Dining Room</h3></div></div>
-        <div class="area-card"><img src="https://i.imgur.com/uUFnHv5.jpeg" alt="Bathroom"><div class="overlay"><h3>Bathroom</h3></div></div>
-        <div class="area-card"><img src="https://i.imgur.com/VODCiky.jpeg" alt="Foyer"><div class="overlay"><h3>Foyer & Entryway</h3></div></div>
-    </div>
-</section>
+    <!-- Shop by Area Section -->
+    <section class="content-section grey-bg" id="shop-by-area">
+        <h2>Designed for Every Space</h2>
+        <p class="section-subtitle">Whether you're revamping a single room or your entire home, we have tailored solutions for every area.</p>
+        <div class="area-grid">
+            <div class="area-card"><img src="https://i.imgur.com/Y4SA372.png" alt="Living Room"><div class="overlay"><h3>Living Room</h3></div></div>
+            <div class="area-card"><img src="https://i.imgur.com/OpMA7ff.jpeg" alt="Kitchen"><div class="overlay"><h3>Kitchen</h3></div></div>
+            <div class="area-card"><img src="https://i.imgur.com/beEsah7.jpeg" alt="Bedroom"><div class="overlay"><h3>Bedroom</h3></div></div>
+            <div class="area-card"><img src="https://i.imgur.com/dpVqx4B.jpeg" alt="Dining Room"><div class="overlay"><h3>Dining Room</h3></div></div>
+            <div class="area-card"><img src="https://i.imgur.com/uUFnHv5.jpeg" alt="Bathroom"><div class="overlay"><h3>Bathroom</h3></div></div>
+            <div class="area-card"><img src="https://i.imgur.com/VODCiky.jpeg" alt="Foyer"><div class="overlay"><h3>Foyer & Entryway</h3></div></div>
+        </div>
+    </section>
 
     <!-- Mood Board Section -->
     <section class="content-section" id="moodboards">
@@ -538,45 +555,44 @@
     <section class="content-section grey-bg" id="reviews">
         <h2>What Our Clients Say</h2>
         <p class="section-subtitle">Our greatest pride is the satisfaction of our homeowners. Here's what they have to say about their experience with RenoSolvers.</p>
+        <!-- First Review -->
         <div class="testimonial-card">
-            <p>"The entire process was seamless and transparent. The RenoSolvers team understood our vision perfectly and delivered a kitchen that exceeded our expectations. The quality of the workmanship is outstanding."</p>
-            <div class="testimonial-author">Mr. & Mrs. Tan, <span>Eco Botanic</span></div>
+            <img class="testimonial-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=300&auto=format&fit=crop" alt="Client Michael Liew">
+            <p>"Working with RenoSolvers was a breath of fresh air. Their process is incredibly transparent, especially the pricing. The communication was excellent throughout the project, and they delivered our custom wardrobe right on schedule. Highly recommended for anyone who values professionalism and quality."</p>
+            <div class="testimonial-author">Michael Liew, <span>Taman Sutera Utama</span></div>
+        </div>
+        <!-- Second Review -->
+        <div class="testimonial-card" style="margin-top: 40px;">
+            <img class="testimonial-img" src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=300&auto=format&fit=crop" alt="The Kumar Family">
+            <p>"We are absolutely in love with our new kitchen! It has completely transformed our home. The design team listened to all our needs and created a space that is both beautiful and highly functional. The quality of the cabinets is top-notch. Thank you, RenoSolvers, for making our dream a reality!"</p>
+            <div class="testimonial-author">The Kumar Family, <span>Horizon Hills</span></div>
         </div>
     </section>
 
     <!-- Footer -->
-<footer class="footer" id="contact">
-    <div class="footer-grid">
-        <div class="footer-col">
-            <h4>About RenoSolvers</h4>
-            <p>Simplifying renovations in Johor Bahru with transparent pricing and quality local craftsmanship. Your dream home, solved.</p>
-        </div>
-        <div class="footer-col">
-            <h4>Navigate</h4>
-            <ul>
-                <li><a href="#our-pillars">Our Pillars</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#shop-by-area">Shop by Area</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-            </ul>
-        </div>
-        <div class="footer-col">
-            <h4>Contact Us</h4>
-            <ul>
-                <li><a href="https://wa.me/601128658566" target="_blank">WhatsApp Us</a></li>
-                <li><a href="mailto:renosolvers@gmail.com">Email Inquiry</a></li>
-                <li><a href="https://www.facebook.com/profile.php?id=100066501726763" target="blank">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-            </ul>
-        </div>
-        <div class="footer-col footer-subscribe">
-            <h4>Stay Updated</h4>
-            <p>Join our mailing list for new design ideas, promotions, and tips from our experts.</p>
-            <input type="email" placeholder="Your email address">
-            <button>Subscribe</button>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        © 2025 RenoSolvers JB. All Rights Reserved. | Website by Manus
-    </div>
-</footer>
+    <footer class="footer" id="contact">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About RenoSolvers</h4>
+                <p>Simplifying renovations in Johor Bahru with transparent pricing and quality local craftsmanship. Your dream home, solved.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigate</h4>
+                <ul>
+                    <li><a href="#our-pillars">Our Pillars</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#shop-by-area">Shop by Area</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="https://wa.me/601128658566" target="_blank">WhatsApp Us</a></li>
+                    <li><a href="mailto:renosolvers@gmail.com" target="_blank">Email Inquiry</a></li>
+                    <li><a href="https://www.facebook.com/profile.php?id=100066501726763" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/YourCompanyName" target="_blank">Instagram</a></li>
+                </ul>
+            </div>
+
+
